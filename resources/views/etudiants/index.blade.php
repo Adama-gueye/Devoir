@@ -26,9 +26,9 @@
                 @endforeach
                 </select>
                 <label for="">Note_1</label>
-                <input type="number" class="form-control" name="note1">
+                <input type="number" class="form-control" name="note1" min="0" max="20">
                 <label for="">Examen</label>
-                <input type="number" class="form-control" name="examen">
+                <input type="number" class="form-control" name="examen" min="0" max="20">
                 <button type="submit" class="btn btn-primary offset-5">Enregistrer</button>
             </form>
         </div>

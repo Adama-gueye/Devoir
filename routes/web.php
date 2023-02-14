@@ -16,11 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('classe');
-})->name('classe');
-
 Route::resource('etudiants',EtudiantController::class);
 Route::resource('matieres',MatiereController::class);
 Route::resource('semestres',SemestreController::class);
-//Route::get('classe',[EtudiantController::class,'liste'])->name('classe');
+Route::get('/first-in-class', [EtudiantController::class, 'getFirstInClass'])->name('first');
+Route::get('/', [EtudiantController::class, 'liste'])->name('classe');
+Route::get('/Moyenne', [EtudiantController::class, 'getAverage'])->name('moyenne');

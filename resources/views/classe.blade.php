@@ -1,15 +1,6 @@
 @include('entete.header')
 @include('navbar.app')
-<?php
 
-use App\Models\Etudiant;
-$som = 0;
-$i=1;
-$etudiants=Etudiant::all();
-$notes = Etudiant::all()->get('note1');
-$exam = Etudiant::all()->get('examen');
-$max = Etudiant::all()->max('note1');
-?>
 <div class="container mt-2">
     <div class="row bg-info p-3 mb-4 mt-5">
         <h3 style="box-shadow:2px 2px 20px blue,2px 2px 20px grey ; text-align:center;">BIENVENUE DANS LA PAGE CONTENANT LA LISTE DES ETUDIANTS</h3>
@@ -47,6 +38,5 @@ $max = Etudiant::all()->max('note1');
             </tr>
         @endforeach
     </table> 
-   
-    <label for="">La plus grande moyenne est {{$max}}</label> 
+
 </div>

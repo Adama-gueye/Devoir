@@ -2,13 +2,7 @@
    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
     <div class="container mb-">
       <a class="navbar-brand" href="{{ route('classe') }}"
-        ><img
-          id="logo"
-          src="logo.jpg"
-          alt="Logo"
-          draggable="false"
-          height="30"
-      /></a>
+        >Classe</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -30,6 +24,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link mx-2" href="{{ route('semestres.index') }}"><i class="fas fa-bell pe-2"></i>Ajout_Semestre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="{{ route('first') }}"><i class="fas fa-bell pe-2"></i>Premier_Classe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="{{ route('moyenne') }}"><i class="fas fa-bell pe-2"></i>Moyenne_Classe</a>
           </li>
         </ul>
       </div>

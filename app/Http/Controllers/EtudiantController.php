@@ -16,11 +16,46 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        $etudiants=Etudiant::all();
+       // 
         $matieres=Matiere::all();
         $semestres=Semestre::all();
-        return view('etudiants.index',compact('etudiants','matieres','semestres'));
+        return view('etudiants.index',compact('matieres','semestres'));
     }
+    public function liste(){
+        $etudiants=Etudiant::all();
+        return view('classe',compact('etudiants'));
+    }
+    public function getAverage()
+    {
+        $etudiants = Etudiant::all();
+        $sum = $etudiants->sum(function ($etudiant) {
+            return $etudiant->note1 + $etudiant->examen;
+        });
+        $count = $etudiants->count();
+        $average = $sum / $count;
+
+        return view('moyenne', [
+            'average' => $average,
+        ]);
+    }
+
+        public function getFirstInClass()
+    {
+        $etudiants = Etudiant::all();
+
+        $first = $etudiants->sortByDesc(function ($etudiant) {
+            return $etudiant->note1 + $etudiant->examen;
+        })->first();
+
+        return view('first', [
+            'nom' => $first->nom,
+            'prenom' => $first->prenom,
+        ]);
+    }
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
